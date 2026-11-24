@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">open_viewer</string>
+    <string name="tagline">you no ads viewer</string>
+    <string name="open_recents">Open recents</string>
+    <string name="open_by_extension">Open by file extension</string>
+    <string name="no_recents">Nothing opened yet. Pick a file type below.</string>
+    <string name="clear">Clear</string>
+    <string name="unsupported">This file type is not supported yet</string>
+    <string name="wrong_type">That file does not look like a %1$s file, trying anyway…</string>
+</resources>

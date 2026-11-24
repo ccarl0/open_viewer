@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- No INTERNET permission: the app works fully offline and cannot load ads or trackers. -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OpenViewer">
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.OpenViewer.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" android:exported="false" />
+
+        <activity
+            android:name=".StepViewerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true">
+            <!-- Open .step / .stp files from file managers and other apps -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="model/step" />
+                <data android:mimeType="application/step" />
+                <data android:mimeType="application/STEP" />
+                <data android:mimeType="model/x-step" />
+                <data android:mimeType="application/x-step" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.step" />
+                <data android:pathPattern=".*\\.STEP" />
+                <data android:pathPattern=".*\\.stp" />
+                <data android:pathPattern=".*\\.STP" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg">
+
+    <!-- Top half: Open recents -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView style="@style/SectionHeader" android:layout_width="0dp"
+                android:layout_weight="1" android:text="@string/open_recents"/>
+            <TextView android:id="@+id/recents_clear" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:padding="16dp"
+                android:text="@string/clear" android:textColor="@color/accent"
+                android:background="?attr/selectableItemBackground"/>
+        </LinearLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ListView android:id="@+id/recents_list" android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView android:id="@+id/recents_empty" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center" android:padding="24dp"
+                android:text="@string/no_recents" android:textColor="@color/text_dim"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/surface"/>
+
+    <!-- Bottom half: Open by file extension -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+        <TextView style="@style/SectionHeader" android:text="@string/open_by_extension"/>
+        <ExpandableListView android:id="@+id/extensions_list" android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>
